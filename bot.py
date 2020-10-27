@@ -5,11 +5,9 @@ import os
 
 bot = commands.AutoShardedBot(command_prefix="k!")
 
-@bot.event
-async def on_message(msg):
-  if msg.content == "hello":
-    mes = "Hello, {0.author.mention}".format(msg)
-    await bot.send_message(msg.channel, mes)
+@commands.command(name="hello")
+async def hello(ctx):
+  await ctx.send("Hello");
 
 @bot.event
 async def on_ready():
