@@ -1,9 +1,11 @@
 import discord
 from discord.ext import commands
 import os
-
+import jishaku
 
 bot = commands.AutoShardedBot(command_prefix="k!")
+
+bot.load_extension("jishaku")
 
 @bot.command(name="hello")
 async def hello(ctx):
