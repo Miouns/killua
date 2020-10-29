@@ -5,7 +5,7 @@ import os
 
 bot = commands.AutoShardedBot(command_prefix="k!")
 
-@commands.command(name="hello")
+@bot.command(name="hello")
 async def hello(ctx):
   await ctx.send("Hello");
 
