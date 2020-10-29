@@ -3,7 +3,11 @@ from discord.ext import commands
 import os
 import jishaku
 
-bot = commands.AutoShardedBot(command_prefix="k!")
+bot = commands.AutoShardedBot(
+  command_prefix="k!",
+  shard_count=3,
+  owner_ids=[681843628317868049, 593774699654283265]
+  )
 
 bot.load_extension("jishaku")
 
