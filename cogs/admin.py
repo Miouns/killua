@@ -1,5 +1,6 @@
 import discord
 from discord.ext import commands
+from asyncio import sleep
 
 class Admin(commands.Cog):
   def __init__(self, bot):
@@ -10,7 +11,9 @@ class Admin(commands.Cog):
     if not amount:
       return await ctx.send("Give me amount")
     await ctx.channel.purge(limit=int(amount))
-    await ctx.send(f"Cleared {amount} Message(s)")
+    msg = await ctx.send(f"Cleared {amount} Message(s)")
+    await sleep(5.0)
+    await msg.delete()
 
 def setup(bot):
   bot.add_cog(Admin(bot))
