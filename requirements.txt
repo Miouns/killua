@@ -3,3 +3,4 @@ jishaku
 discord.py
 requests
 jikanpy
+datetime
