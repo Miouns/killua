@@ -2,3 +2,4 @@ discord
 jishaku
 discord.py
 requests
+jikanpy
