@@ -9,6 +9,7 @@ bot = commands.AutoShardedBot(
   owner_ids=[681843628317868049, 593774699654283265]
   )
 
+bot.remove_command('ping')
 bot.load_extension("jishaku")
 
 @bot.command(name="hello")
