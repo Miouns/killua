@@ -9,7 +9,7 @@ class Admin(commands.Cog):
   async def clear(self, ctx, *, amount):
     if not amount:
       return await ctx.send("Give me amount")
-    await ctx.channel.purge(limit=amount)
+    await ctx.channel.purge(limit=int(amount))
     await ctx.send(f"Cleared {amount} Message(s)")
 
 def setup(bot):
