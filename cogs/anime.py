@@ -38,6 +38,7 @@ class Anime(commands.Cog):
     embed.add_field(name="Episodes: ", value=episodes)
     embed.set_thumbnail(url=image)
     
+    await ctx.send(embed=embed)
 
 def setup(bot):
   bot.add_cog(Anime(bot))
