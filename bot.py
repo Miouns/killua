@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 import os
 import jishaku
-from config.colors import color
+from config.colors import color, colors
 
 bot = commands.AutoShardedBot(
   command_prefix="k!",
@@ -10,6 +10,7 @@ bot = commands.AutoShardedBot(
   owner_ids=[681843628317868049, 593774699654283265]
   )
 
+bot.colors = colors
 bot.color = color
 
 bot.load_extension("jishaku")
