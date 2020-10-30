@@ -17,7 +17,7 @@ class Anime(commands.Cog):
     image = result["image_url"]
     desc = result["synopsis"]
     episodes = result["episodes"]
-    rate = result["rate"]
+    rate = result["score"]
     created = result["start_date"]
     status = result["end_date"]
     
