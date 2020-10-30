@@ -11,7 +11,7 @@ class Admin(commands.Cog):
     if not amount:
       return await ctx.send("Give me amount")
     await ctx.channel.purge(limit=int(amount))
-    msg = await ctx.send(f"Cleared {amount} Message(s)")
+    msg = await ctx.send(f"<a:tick:769242226349572136> Cleared {amount} Messages")
     await sleep(5.0)
     await msg.delete()
 
