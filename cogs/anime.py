@@ -29,7 +29,7 @@ class Anime(commands.Cog):
       status = "ongoing"
     embed = Embed(
       title=title,
-      description=desc
+      description=desc,
       colour=0x03fc35
       )
     embed.add_field(name="Title: ", value=title, inline=False)
