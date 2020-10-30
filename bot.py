@@ -21,5 +21,10 @@ async def on_ready():
     print(bot.user.name)
     print(bot.user.id)
     print('------')
+  
+
+for name in os.listdir('./cogs'):
+  if name.endswith('.py'):
+    bot.load_extension(f'cogs.{name[:-3]}')
 
 bot.run(os.environ["SECRET"])
