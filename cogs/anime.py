@@ -35,7 +35,8 @@ class Anime(commands.Cog):
     embed.add_field(name="Title: ", value=title, inline=False)
     embed.add_field(name="Rate: ", value=f'{star}/{rate}', inline=False)
     embed.add_field(name="Status: ", value=status)
-    embed.add_field(name="Episodes: ", value=episodes)
+    if status == "ongoing":
+      embed.add_field(name="Episodes: ", value=episodes)
     embed.set_thumbnail(url=image)
     
     await ctx.send(embed=embed)
