@@ -1,1 +1,1 @@
-worker: pip install -r requirements.txt && python bot.py
+worker: pip install -r requirements.txt && python -m pip install -U git+https://github.com/Rapptz/discord-ext-menus && python bot.py
