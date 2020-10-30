@@ -2,12 +2,15 @@ import discord
 from discord.ext import commands
 import os
 import jishaku
+from config.colors import color
 
 bot = commands.AutoShardedBot(
   command_prefix="k!",
   shard_count=3,
   owner_ids=[681843628317868049, 593774699654283265]
   )
+
+bot.color = color
 
 bot.load_extension("jishaku")
 
