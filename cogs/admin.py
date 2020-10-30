@@ -7,6 +7,7 @@ class Admin(commands.Cog):
     self.bot = bot
   
   @commands.command(name="clear", aliases=["cl", 'purge'])
+  @commands.has_permissions(administrator=True)
   async def clear(self, ctx, *, amount):
     if not amount:
       return await ctx.send("Give me amount")
