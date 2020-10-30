@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 
-class General(commands.Cog):
+class Admin(commands.Cog):
   def __init__(self, bot):
     self.bot = bot
   
@@ -13,4 +13,4 @@ class General(commands.Cog):
     await ctx.send(f"Cleared {amount} Message(s)")
 
 def setup(bot):
-  bot.add_cog(General(bot))
+  bot.add_cog(Admin(bot))
