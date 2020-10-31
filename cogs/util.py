@@ -25,9 +25,7 @@ class Util(commands.Cog):
     )
     embed.add_field(name="Name: ", value=name, inline=False)
     embed.add_field(name="Author: ", value=author, inline=False)
-    embed.add_field(name="Email: ", value=email, inline=False)
-    embed.add_field(name="Web: ", value=web, inline=False)
-
+    await ctx.send(embed=embed)
 
 def setup(bot):
   bot.add_cog(Util(bot))
