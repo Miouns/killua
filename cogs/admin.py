@@ -18,8 +18,8 @@ class Admin(commands.Cog):
     await msg.delete()
   
   @commands.command(name="prefix", aliases=["ch", "changeprefix"])
-  async def prefix(self, ctx, *, prefix):
   @commands.has_permissions(administrator=True)
+  async def prefix(self, ctx, *, prefix):
     with open("../config/prefix.json", "r+") as f:
       data = {}
       data[str(ctx.guild.id)] = prefix
