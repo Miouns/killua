@@ -15,8 +15,6 @@ class Util(commands.Cog):
     name = res["name"]
     desc = res["description"]
     author = res["author"]["name"]
-    email = res["author"]["email"] || "None"
-    web = res["author"]["url"] || "None"
     url = res["homepage"]
     
     embed = Embed(
