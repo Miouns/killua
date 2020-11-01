@@ -41,7 +41,7 @@ async def on_guild_join(guild):
   prefixes[str(guild.id)] = "k!"
     
   with open("./config/prefixes.json", "w") as f:
-   json.dump(prefixes, f, indent=4)
+    json.dump(prefixes, f, indent=4)
 
 
 @bot.event
@@ -52,7 +52,7 @@ async def on_guild_remove(guild):
   prefixes.pop(str(guild.id))
     
   with open("./config/prefixes.json", "w") as f:
-   json.dump(prefixes, f, indent=4)
+    json.dump(prefixes, f, indent=4)
 
 
 for name in os.listdir('./cogs'):
