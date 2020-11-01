@@ -13,7 +13,6 @@ async def get_prefix(bot, msg):
 
 bot = commands.AutoShardedBot(
   command_prefix=get_prefix,
-  shard_count=3,
   owner_ids=[681843628317868049, 593774699654283265]
   )
 
