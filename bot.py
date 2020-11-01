@@ -2,10 +2,17 @@ import discord
 from discord.ext import commands
 import os
 import jishaku
+import json
 from config.colors import color, colors
 
+def get_prefix(bot, msg):
+  with open("./config/prefixes.json", "r") as f:
+    prefixes = json.load(f)
+  return prefixes[str(msg.guild.id)]
+
+
 bot = commands.AutoShardedBot(
-  command_prefix="k!",
+  command_prefix=get_prefix,
   shard_count=3,
   owner_ids=[681843628317868049, 593774699654283265]
   )
@@ -25,7 +32,28 @@ async def on_ready():
     print(bot.user.name)
     print(bot.user.id)
     print('------')
-  
+
+@bot.event
+async def on_guild_join(guild):
+  with open("./config/prefixes.json", "r") as f:
+    prefixes = json.load(f)
+    
+  prefixes[str(guild.id)] = "k!"
+    
+  with open("./config/prefixes.json", "w") as f:
+   json.dump(prefixes, f, indent=4)
+
+
+@bot.event
+async def on_guild_remove(guild):
+  with open("./config/prefixes.json", "r") as f:
+    prefixes = json.load(f)
+    
+  prefixes.pop(str(guild.id))
+    
+  with open("./config/prefixes.json", "w") as f:
+   json.dump(prefixes, f, indent=4)
+
 
 for name in os.listdir('./cogs'):
   if name.endswith('.py'):
