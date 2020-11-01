@@ -5,7 +5,7 @@ import jishaku
 import json
 from config.colors import color, colors
 
-def get_prefix(bot, msg):
+async def get_prefix(bot, msg):
   with open("./config/prefixes.json", "r") as f:
     prefixes = json.load(f)
   return prefixes[str(msg.guild.id)]
