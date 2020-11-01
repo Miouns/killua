@@ -20,11 +20,14 @@ class Admin(commands.Cog):
   @commands.command(name="prefix", aliases=["ch", "changeprefix"])
   @commands.has_permissions(administrator=True)
   async def prefix(self, ctx, *, prefix):
-    with open("../config/prefix.json", "r+") as f:
-      data = {}
-      data[str(ctx.guild.id)] = prefix
-      json.dump(data, f)
-      f.close()
+    with open("../config/prefixes.json", "r") as f:
+      data = json.load(f)
+      
+    data[str(ctx.guild.id)] = prefix
+    
+    with open("../config/prefixes.json", "w") as f:
+      json.dump(data, f, indent=4)
+    
     await ctx.send("Prefix set to `%s`" %(Prefix))
 
 def setup(bot):
