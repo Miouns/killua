@@ -16,7 +16,7 @@ class General(commands.Cog):
       member = ctx.message.author
     embed = discord.Embed(title=f"{member.name}#{member.discriminator} Avatar", colour=0x37e666)
     embed.set_image(url=member.avatar_url)
-    
+    await ctx.send(embed=embed)
   
 
 
