@@ -13,7 +13,7 @@ class General(commands.Cog):
   async def ava(self, ctx, *, member: discord.Member=None):
     if not member:
       member = ctx.message.author
-    embed = discord.Embed(title=f"{member.username}#{member.discriminator} Avatar", colour=0x37e666)
+    embed = discord.Embed(title=f"{member.name}#{member.discriminator} Avatar", colour=0x37e666)
     embed.set_image(url=member.avatar_url)
     
   
