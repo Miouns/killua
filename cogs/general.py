@@ -10,7 +10,7 @@ class General(commands.Cog):
     await ctx.send(f'Pong! {round(self.bot.latency*1000)}ms')
     
   @commands.command(name='avatar')
-  async def ava(ctx, *, member: discord.Member=None):
+  async def ava(self, ctx, *, member: discord.Member=None):
     if not member:
       member = ctx.message.author
     embed = discord.Embed(title=f"{member.username}#{member.discriminator} Avatar", colour=0x37e666)
