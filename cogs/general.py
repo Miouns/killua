@@ -10,7 +10,7 @@ class General(commands.Cog):
     await ctx.send(f'Pong! {round(self.bot.latency*1000)}ms')
     
   @commands.command(name='avatar', aliases=["ava", "pfp", "av"], description="Get user avatar", usage="[@member]")
-  async def ava(self, ctx, *, member):
+  async def ava(self, ctx):
     member = ctx.message.mentions[0]
     if not member:
       member = ctx.message.author
